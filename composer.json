@@ -1,0 +1,21 @@
+{
+  "name": "kometsoft/dash-preset",
+  "description": "Simple presets",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Kometsoft\\DashPreset\\": "src/"
+    }
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "laravel/ui": "^4.0.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Kometsoft\\DashPreset\\DashPresetServiceProvider"
+      ]
+    }
+  }
+}
