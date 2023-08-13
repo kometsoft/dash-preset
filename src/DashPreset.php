@@ -43,11 +43,11 @@ class DashPreset extends Preset
 
     public static function updateCss()
     {
-        copy(__DIR__ . '/stubs/css', resource_path('css'));
+        File::copyDirectory(__DIR__ . '/stubs/css', resource_path('css'));
     }
 
     public static function updateJs()
     {
-        copy(__DIR__ . '/stubs/js', resource_path('js'));
+        File::copyDirectory(__DIR__ . '/stubs/js', resource_path('js'));
     }
 }
