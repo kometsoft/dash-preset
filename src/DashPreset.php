@@ -32,7 +32,7 @@ class DashPreset extends Preset
                 'vite' => '^4.0.0',
                 'vue' => '3.0.0',
             ],
-            Arr::except($packages, [])
+            // Arr::except($packages, [])
         );
     }
 
