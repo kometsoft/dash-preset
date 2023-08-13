@@ -21,7 +21,7 @@ class DashPresetServiceProvider extends ServiceProvider
     public function boot(): void
     {
         UiCommand::macro('dash', function (UiCommand $command) {
-            Dash::install();
+            DashPreset::install();
         });
     }
 }
