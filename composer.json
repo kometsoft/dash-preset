@@ -1,10 +1,10 @@
 {
-  "name": "kometsoft/dash-preset",
-  "description": "Simple presets",
+  "name": "kometsoft/volt-preset",
+  "description": "Laravel UI presets for Tabler + Vue",
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "Kometsoft\\DashPreset\\": "src/"
+      "Kometsoft\\VoltPreset\\": "src/"
     }
   },
   "minimum-stability": "stable",
@@ -14,7 +14,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Kometsoft\\DashPreset\\DashPresetServiceProvider"
+        "Kometsoft\\VoltPreset\\VoltPresetServiceProvider"
       ]
     }
   }

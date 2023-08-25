@@ -1,26 +1,27 @@
 <?php
 
-namespace Kometsoft\DashPreset;
+namespace Kometsoft\VoltPreset;
 
 // use Illuminate\Support\Arr;
 use Laravel\Ui\Presets\Preset;
 use Illuminate\Support\Facades\File;
 
-class DashPreset extends Preset
+class VoltPreset extends Preset
 {
     public static function install()
     {
         static::cleanDirectory();
         static::updatePackages();
         static::updateViteConfigurations();
-        static::updateCss();
+        static::updateSass();
         static::updateJs();
         static::removeNodeModules();
     }
 
     public static function cleanDirectory()
     {
-        File::cleanDirectory(resource_path('css'));
+        File::removeDirectory(resource_path('css'));
+        File::cleanDirectory(resource_path('sass'));
         File::cleanDirectory(resource_path('js'));
     }
 
@@ -28,9 +29,17 @@ class DashPreset extends Preset
     {
         return array_merge(
             [
-                'laravel-vite-plugin' => '^0.7.5',
+                '@popperjs/core' => '^2.11.8',
+                '@tabler/core' => '^1.0.0-beta20',
+                '@vitejs/plugin-vue' => '^4.0.0',
+                'axios' => '^1.1.2',
+                'bootstrap' => '^5.3.1',
+                'laravel-vite-plugin' => '^0.8.0',
+                'litepicker' => '^2.0.12',
+                'sass' => '^1.56.1',
+                'tom-select' => '^2.2.2',
                 'vite' => '^4.0.0',
-                'vue' => '3.0.0',
+                'vue' => '^3.2.37',
             ],
             // Arr::except($packages, [])
         );
@@ -41,9 +50,9 @@ class DashPreset extends Preset
         copy(__DIR__ . '/stubs/vite.config.js', base_path('vite.config.js'));
     }
 
-    public static function updateCss()
+    public static function updateSass()
     {
-        File::copyDirectory(__DIR__ . '/stubs/css', resource_path('css'));
+        File::copyDirectory(__DIR__ . '/stubs/sass', resource_path('sass'));
     }
 
     public static function updateJs()
