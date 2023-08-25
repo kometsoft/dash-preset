@@ -23,7 +23,7 @@ class VoltPresetServiceProvider extends ServiceProvider
         UiCommand::macro('volt', function (UiCommand $command) {
             VoltPreset::install();
 
-            $command->info('Volt ⚡️ scaffolding installed successfully.');
+            $command->info('Volt scaffolding installed successfully. 🔥');
 
             $command->warn('Please run [npm install && npm run build] to compile your fresh scaffolding.');
         });

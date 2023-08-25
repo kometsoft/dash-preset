@@ -15,12 +15,13 @@ class VoltPreset extends Preset
         static::updateViteConfigurations();
         static::updateSass();
         static::updateJs();
+        static::updateVueComponent();
         static::removeNodeModules();
     }
 
     public static function cleanDirectory()
     {
-        File::removeDirectory(resource_path('css'));
+        File::deleteDirectory(resource_path('css'));
         File::cleanDirectory(resource_path('sass'));
         File::cleanDirectory(resource_path('js'));
     }
@@ -58,5 +59,10 @@ class VoltPreset extends Preset
     public static function updateJs()
     {
         File::copyDirectory(__DIR__ . '/stubs/js', resource_path('js'));
+    }
+
+    public static function updateVueComponent()
+    {
+        File::copyDirectory(__DIR__ . '/stubs/components', resource_path('components'));
     }
 }
